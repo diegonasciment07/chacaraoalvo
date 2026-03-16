@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!--
+    Chácara O Alvo — Logo Mark
+    Dois arcos simétricos (135° cada) com gap de 45° no topo e na base.
+    Centro: (50,50) · Raio: 35 · Stroke: 11 · Dot-r: 11
+    Pontos de gap (±22.5° a partir do topo/base):
+      Topo: 247.5° → (36.61, 17.66)  e  292.5° → (63.39, 17.66)
+      Base: 67.5°  → (63.39, 82.34) e  112.5° → (36.61, 82.34)
+  -->
+
+  <!-- Arco direito: de (63.39, 17.66) até (63.39, 82.34) horário pelo lado direito -->
+  <path
+    d="M 63.39 17.66 A 35 35 0 0 1 63.39 82.34"
+    stroke="#2D4A2D"
+    stroke-width="11"
+    stroke-linecap="round"
+  />
+
+  <!-- Arco esquerdo: de (36.61, 82.34) até (36.61, 17.66) horário pelo lado esquerdo -->
+  <path
+    d="M 36.61 82.34 A 35 35 0 0 1 36.61 17.66"
+    stroke="#2D4A2D"
+    stroke-width="11"
+    stroke-linecap="round"
+  />
+
+  <!-- Ponto central -->
+  <circle cx="50" cy="50" r="11" fill="#2D4A2D"/>
+</svg>
