@@ -359,8 +359,23 @@
 
         <!-- Formulário -->
         <div class="orcamento-form-wrapper">
-          <form action="https://formspree.io/f/SEU_ID_AQUI"
-                method="POST"
+          <!-- Estado de sucesso -->
+          <div id="formSucesso" class="form-sucesso" hidden>
+            <div class="form-sucesso-inner">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <circle cx="24" cy="24" r="23" stroke="#2D4A2D" stroke-width="1.5" stroke-opacity="0.3"/>
+                <circle cx="24" cy="24" r="15" stroke="#2D4A2D" stroke-width="1.5" stroke-opacity="0.6"/>
+                <circle cx="24" cy="24" r="5"  fill="#2D4A2D"/>
+              </svg>
+              <h3>Solicitação enviada!</h3>
+              <p>Recebemos seu pedido de orçamento.<br>Responderemos em até 24 horas pelo WhatsApp ou e-mail.</p>
+              <a href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1%2C%20acabei%20de%20enviar%20minha%20solicita%C3%A7%C3%A3o%20de%20or%C3%A7amento%20pelo%20site!" target="_blank" rel="noopener" class="btn btn-verde">
+                Falar agora pelo WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <form method="POST"
                 class="orcamento-form"
                 id="orcamentoForm"
                 novalidate>
@@ -632,6 +647,7 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
