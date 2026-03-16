@@ -44,9 +44,9 @@ CREATE INDEX IF NOT EXISTS orcamentos_status_idx     ON orcamentos (status);
 ALTER TABLE orcamentos ENABLE ROW LEVEL SECURITY;
 
 -- Qualquer visitante pode inserir (formulário público)
+-- Sem restrição de role para compatibilidade com o novo formato sb_publishable_
 CREATE POLICY "insert_public"
   ON orcamentos FOR INSERT
-  TO anon
   WITH CHECK (true);
 
 -- Somente autenticados podem ler e atualizar (admin)
