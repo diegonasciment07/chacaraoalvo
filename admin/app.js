@@ -103,7 +103,14 @@ loginForm.addEventListener('submit', async function(e) {
   var result = await db.auth.signInWithPassword({ email: email, password: password });
 
   if (result.error) {
-    loginError.textContent = 'E-mail ou senha incorretos.';
+    var msg = result.error.message || '';
+    if (msg.toLowerCase().includes('email not confirmed')) {
+      loginError.textContent = 'E-mail ainda não confirmado. Verifique sua caixa de entrada ou confirme o usuário no painel do Supabase (Authentication → Users → Confirm).';
+    } else if (msg.toLowerCase().includes('invalid login')) {
+      loginError.textContent = 'E-mail ou senha incorretos.';
+    } else {
+      loginError.textContent = 'Erro ao entrar: ' + msg;
+    }
     loginError.hidden = false;
     loginBtn.textContent = 'Entrar';
     loginBtn.disabled = false;
