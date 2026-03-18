@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin — Chácara O Alvo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ══════════ LOGIN ══════════ -->
+<div id="screenLogin" class="screen-login">
+  <div class="login-card">
+    <div class="login-brand">
+      <svg width="40" height="40" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <path d="M 63.39 17.66 A 35 35 0 0 1 63.39 82.34" stroke="#2D4A2D" stroke-width="11" stroke-linecap="round"/>
+        <path d="M 36.61 82.34 A 35 35 0 0 1 36.61 17.66" stroke="#2D4A2D" stroke-width="11" stroke-linecap="round"/>
+        <circle cx="50" cy="50" r="11" fill="#2D4A2D"/>
+      </svg>
+      <div>
+        <span class="login-brand-name">Chácara O Alvo</span>
+        <span class="login-brand-sub">Painel Administrativo</span>
+      </div>
+    </div>
+    <h1 class="login-title">Entrar</h1>
+    <div id="loginError" class="alert alert-error" hidden></div>
+    <form id="loginForm" novalidate>
+      <div class="form-group">
+        <label for="loginEmail">E-mail</label>
+        <input type="email" id="loginEmail" placeholder="admin@chacaraoalvo.com.br" required autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label for="loginPassword">Senha</label>
+        <input type="password" id="loginPassword" placeholder="••••••••" required autocomplete="current-password">
+      </div>
+      <button type="submit" class="btn-primary btn-full" id="loginBtn">Entrar</button>
+    </form>
+  </div>
+</div>
+
+<!-- ══════════ APP ══════════ -->
+<div id="screenApp" class="screen-app" hidden>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <svg width="28" height="28" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <path d="M 63.39 17.66 A 35 35 0 0 1 63.39 82.34" stroke="white" stroke-width="11" stroke-linecap="round"/>
+        <path d="M 36.61 82.34 A 35 35 0 0 1 36.61 17.66" stroke="white" stroke-width="11" stroke-linecap="round"/>
+        <circle cx="50" cy="50" r="11" fill="white"/>
+      </svg>
+      <span class="sidebar-brand">O Alvo</span>
+      <button class="sidebar-close" id="sidebarClose" aria-label="Fechar menu">✕</button>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item active" data-section="overview">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Visão Geral
+      </a>
+      <a href="#" class="nav-item" data-section="orcamentos">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        Orçamentos
+        <span class="nav-badge" id="navBadgeNovos" hidden></span>
+      </a>
+      <a href="#" class="nav-item" data-section="agenda">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Agenda
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <span class="sidebar-user" id="sidebarUser"></span>
+      <button class="btn-logout" id="btnLogout">Sair</button>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <div class="main">
+
+    <!-- Top bar -->
+    <header class="topbar">
+      <button class="topbar-menu" id="topbarMenu" aria-label="Abrir menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <h1 class="topbar-title" id="topbarTitle">Visão Geral</h1>
+      <button class="btn-icon" id="btnRefresh" title="Atualizar dados" aria-label="Atualizar">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+      </button>
+    </header>
+
+    <!-- ── OVERVIEW ── -->
+    <section class="content-section" id="sectionOverview">
+      <div class="kpi-grid" id="kpiGrid">
+        <div class="kpi-card">
+          <span class="kpi-label">Total de solicitações</span>
+          <strong class="kpi-value" id="kpiTotal">—</strong>
+          <span class="kpi-sub">desde o início</span>
+        </div>
+        <div class="kpi-card kpi-card--accent">
+          <span class="kpi-label">Aguardando resposta</span>
+          <strong class="kpi-value" id="kpiNovos">—</strong>
+          <span class="kpi-sub">status: novo</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-label">Em atendimento</span>
+          <strong class="kpi-value" id="kpiAtendimento">—</strong>
+          <span class="kpi-sub">em negociação</span>
+        </div>
+        <div class="kpi-card kpi-card--green">
+          <span class="kpi-label">Fechados / Confirmados</span>
+          <strong class="kpi-value" id="kpiFechados">—</strong>
+          <span class="kpi-sub">eventos confirmados</span>
+        </div>
+      </div>
+
+      <div class="section-row">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Últimas solicitações</h2>
+            <a href="#" class="link-sm" data-section="orcamentos">Ver todas →</a>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table" id="tableRecentes">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Evento</th>
+                  <th>Data</th>
+                  <th>Status</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="tbodyRecentes">
+                <tr><td colspan="5" class="table-empty">Carregando…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Próximas datas bloqueadas</h2>
+            <a href="#" class="link-sm" data-section="agenda">Gerenciar →</a>
+          </div>
+          <ul class="agenda-mini" id="agendaMini">
+            <li class="table-empty">Carregando…</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ORÇAMENTOS ── -->
+    <section class="content-section" id="sectionOrcamentos" hidden>
+      <div class="toolbar">
+        <div class="toolbar-filters">
+          <button class="filter-btn active" data-filter="todos">Todos</button>
+          <button class="filter-btn" data-filter="novo">Novos</button>
+          <button class="filter-btn" data-filter="em_atendimento">Em atendimento</button>
+          <button class="filter-btn" data-filter="fechado">Fechados</button>
+        </div>
+        <input type="search" class="search-input" id="searchOrcamentos" placeholder="Buscar por nome, e-mail…">
+      </div>
+
+      <div class="card">
+        <div class="table-wrap">
+          <table class="data-table" id="tableOrcamentos">
+            <thead>
+              <tr>
+                <th>Data envio</th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Evento</th>
+                <th>Data evento</th>
+                <th>Convidados</th>
+                <th>Status</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="tbodyOrcamentos">
+              <tr><td colspan="8" class="table-empty">Carregando…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── AGENDA ── -->
+    <section class="content-section" id="sectionAgenda" hidden>
+      <div class="agenda-layout">
+
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Bloquear nova data</h2>
+          </div>
+          <form id="formAgenda" class="agenda-form">
+            <div class="form-group">
+              <label for="agendaData">Data do evento</label>
+              <input type="date" id="agendaData" required>
+            </div>
+            <div class="form-group">
+              <label for="agendaDesc">Descrição (uso interno)</label>
+              <input type="text" id="agendaDesc" placeholder="ex: Casamento Silva">
+            </div>
+            <div class="form-group">
+              <label for="agendaStatus">Tipo</label>
+              <select id="agendaStatus">
+                <option value="reservado">Reservado (evento)</option>
+                <option value="bloqueado">Bloqueado (manutenção etc.)</option>
+              </select>
+            </div>
+            <div id="agendaError" class="alert alert-error" hidden></div>
+            <div id="agendaSuccess" class="alert alert-success" hidden></div>
+            <button type="submit" class="btn-primary">Bloquear data</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Datas bloqueadas</h2>
+            <span class="badge-count" id="agendaCount">0</span>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table" id="tableAgenda">
+              <thead>
+                <tr>
+                  <th>Data</th>
+                  <th>Dia</th>
+                  <th>Descrição</th>
+                  <th>Tipo</th>
+                  <th>Ação</th>
+                </tr>
+              </thead>
+              <tbody id="tbodyAgenda">
+                <tr><td colspan="5" class="table-empty">Carregando…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div><!-- /main -->
+</div><!-- /screen-app -->
+
+<!-- ══════════ MODAL DETALHE ORÇAMENTO ══════════ -->
+<div id="modalOrcamento" class="modal" hidden>
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+  <div class="modal-panel">
+    <div class="modal-header">
+      <h2 class="modal-title">Detalhes do Orçamento</h2>
+      <button class="btn-icon" id="modalClose" aria-label="Fechar">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-footer">
+      <div class="status-actions" id="statusActions"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
