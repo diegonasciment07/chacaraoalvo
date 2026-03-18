@@ -384,3 +384,315 @@ var supabaseClient = (typeof supabase !== 'undefined')
     setTimeout(function () { div.remove(); }, 8000);
   }
 })();
+
+
+/* ── Calendário de Disponibilidade ───────────────────────── */
+(function () {
+
+  var modal         = document.getElementById('calendarModal');
+  var backdrop      = document.getElementById('calModalBackdrop');
+  var closeBtn      = document.getElementById('calModalClose');
+  var prevBtn       = document.getElementById('calPrevMonth');
+  var nextBtn       = document.getElementById('calNextMonth');
+  var monthLabel    = document.getElementById('calMonthLabel');
+  var grid          = document.getElementById('calGrid');
+  var loadingEl     = document.getElementById('calLoading');
+  var errorEl       = document.getElementById('calError');
+  var selectedLabel = document.getElementById('calSelectedLabel');
+  var confirmBtn    = document.getElementById('calConfirm');
+
+  if (!modal) return;
+
+  var today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  var viewYear  = today.getFullYear();
+  var viewMonth = today.getMonth(); /* 0-based */
+  var bookedDates  = new Set();
+  var dataFetched  = false;
+  var selectedISO  = null;
+
+  var PT_MONTHS = [
+    'Janeiro','Fevereiro','Março','Abril','Maio','Junho',
+    'Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'
+  ];
+
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+  function toISO(year, month, day) {
+    return year + '-' + pad(month + 1) + '-' + pad(day);
+  }
+
+  function formatPTBR(isoStr) {
+    var parts = isoStr.split('-');
+    var d = parseInt(parts[2], 10);
+    var m = parseInt(parts[1], 10) - 1;
+    var y = parts[0];
+    var date = new Date(parseInt(y, 10), m, d);
+    var weekdays = ['Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado'];
+    return weekdays[date.getDay()] + ', ' + d + ' de ' + PT_MONTHS[m] + ' de ' + y;
+  }
+
+  /* Busca datas reservadas na tabela 'agenda' do Supabase */
+  function fetchBookedDates() {
+    if (!supabaseClient) {
+      dataFetched = true;
+      return Promise.resolve();
+    }
+    if (loadingEl) loadingEl.hidden = false;
+    if (grid) grid.style.opacity = '0.35';
+
+    return supabaseClient
+      .from('agenda')
+      .select('data')
+      .then(function (result) {
+        if (loadingEl) loadingEl.hidden = true;
+        if (grid) grid.style.opacity = '1';
+        if (result.error) {
+          console.error('Agenda fetch error:', result.error);
+          if (errorEl) errorEl.hidden = false;
+          dataFetched = true;
+          return;
+        }
+        bookedDates = new Set((result.data || []).map(function (r) { return r.data; }));
+        dataFetched = true;
+      })
+      .catch(function (err) {
+        if (loadingEl) loadingEl.hidden = true;
+        if (grid) grid.style.opacity = '1';
+        console.error('Agenda exception:', err);
+        if (errorEl) errorEl.hidden = false;
+        dataFetched = true;
+      });
+  }
+
+  /* Renderiza o grid do mês */
+  function renderMonth() {
+    if (!grid || !monthLabel) return;
+
+    monthLabel.textContent = PT_MONTHS[viewMonth] + ' ' + viewYear;
+
+    var firstDay     = new Date(viewYear, viewMonth, 1).getDay();
+    var daysInMonth  = new Date(viewYear, viewMonth + 1, 0).getDate();
+
+    /* Desabilita prev se estamos no mês atual */
+    if (prevBtn) {
+      prevBtn.disabled = (viewYear === today.getFullYear() && viewMonth === today.getMonth());
+    }
+
+    grid.innerHTML = '';
+
+    /* Células vazias no início */
+    for (var i = 0; i < firstDay; i++) {
+      var empty = document.createElement('div');
+      empty.className = 'cal-day cal-day--empty';
+      empty.setAttribute('aria-hidden', 'true');
+      grid.appendChild(empty);
+    }
+
+    /* Células de dias */
+    for (var day = 1; day <= daysInMonth; day++) {
+      var iso  = toISO(viewYear, viewMonth, day);
+      var date = new Date(viewYear, viewMonth, day);
+      date.setHours(0, 0, 0, 0);
+
+      var cell    = document.createElement('div');
+      var classes = ['cal-day'];
+      var isToday = (date.getTime() === today.getTime());
+
+      if (isToday) classes.push('cal-day--today');
+
+      if (date < today) {
+        classes.push('cal-day--past');
+        cell.setAttribute('aria-disabled', 'true');
+      } else if (bookedDates.has(iso)) {
+        classes.push('cal-day--off');
+        cell.setAttribute('aria-disabled', 'true');
+        cell.setAttribute('aria-label', day + ' de ' + PT_MONTHS[viewMonth] + ' — reservado');
+      } else {
+        classes.push('cal-day--ok');
+        cell.setAttribute('role', 'button');
+        cell.setAttribute('tabindex', '0');
+        cell.setAttribute('data-iso', iso);
+        cell.setAttribute('aria-label', day + ' de ' + PT_MONTHS[viewMonth] + ' — disponível');
+        cell.addEventListener('click', function () { selectDate(this.getAttribute('data-iso')); });
+        cell.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            selectDate(this.getAttribute('data-iso'));
+          }
+        });
+      }
+
+      if (iso === selectedISO) classes.push('cal-day--selected');
+      cell.className = classes.join(' ');
+      cell.textContent = day;
+      grid.appendChild(cell);
+    }
+  }
+
+  /* Seleciona uma data */
+  function selectDate(iso) {
+    selectedISO = iso;
+
+    /* Atualiza highlight */
+    grid.querySelectorAll('.cal-day--selected').forEach(function (el) {
+      el.classList.remove('cal-day--selected');
+    });
+    var chosen = grid.querySelector('[data-iso="' + iso + '"]');
+    if (chosen) chosen.classList.add('cal-day--selected');
+
+    /* Atualiza rodapé */
+    if (selectedLabel) {
+      selectedLabel.textContent = formatPTBR(iso);
+      selectedLabel.style.color = 'var(--verde-500)';
+      selectedLabel.style.fontStyle = 'normal';
+      selectedLabel.style.fontWeight = '500';
+    }
+
+    /* Habilita botão confirmar */
+    if (confirmBtn) {
+      confirmBtn.disabled = false;
+      confirmBtn.removeAttribute('aria-disabled');
+    }
+  }
+
+  /* Confirma data → preenche formulário */
+  if (confirmBtn) {
+    confirmBtn.addEventListener('click', function () {
+      if (!selectedISO) return;
+
+      /* Preenche campo #data no formulário */
+      var dataInput = document.getElementById('data');
+      if (dataInput) {
+        dataInput.value = selectedISO;
+        dataInput.dispatchEvent(new Event('change', { bubbles: true }));
+        dataInput.dispatchEvent(new Event('input',  { bubbles: true }));
+        dataInput.classList.add('field-prefilled');
+        setTimeout(function () { dataInput.classList.remove('field-prefilled'); }, 2000);
+      }
+
+      closeModal();
+
+      /* Navega para step 2 se ainda estiver no step 1 */
+      var step1 = document.getElementById('step1');
+      if (step1 && step1.classList.contains('active')) {
+        var btnNext = document.querySelector('.btn-step-next[data-next="2"]');
+        if (btnNext) btnNext.click();
+      }
+
+      /* Rola para o formulário */
+      setTimeout(function () {
+        var orcamento = document.getElementById('orcamento');
+        if (orcamento) {
+          var offset = (document.getElementById('header') || {}).offsetHeight || 76;
+          var top = orcamento.getBoundingClientRect().top + window.pageYOffset - offset - 20;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      }, 100);
+    });
+  }
+
+  /* Abre o modal */
+  function openModal(preselectedISO) {
+    if (errorEl) errorEl.hidden = true;
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+
+    /* Reset de estado */
+    viewYear  = today.getFullYear();
+    viewMonth = today.getMonth();
+    selectedISO = null;
+    if (selectedLabel) {
+      selectedLabel.textContent = 'Selecione uma data disponível acima';
+      selectedLabel.style.color = '';
+      selectedLabel.style.fontStyle = 'italic';
+      selectedLabel.style.fontWeight = '';
+    }
+    if (confirmBtn) {
+      confirmBtn.disabled = true;
+      confirmBtn.setAttribute('aria-disabled', 'true');
+    }
+
+    /* Se veio com data pré-selecionada */
+    if (preselectedISO) {
+      var parts = preselectedISO.split('-');
+      viewYear  = parseInt(parts[0], 10);
+      viewMonth = parseInt(parts[1], 10) - 1;
+      selectedISO = preselectedISO;
+      if (confirmBtn) {
+        confirmBtn.disabled = false;
+        confirmBtn.removeAttribute('aria-disabled');
+      }
+      if (selectedLabel) {
+        selectedLabel.textContent = formatPTBR(preselectedISO);
+        selectedLabel.style.color = 'var(--verde-500)';
+        selectedLabel.style.fontStyle = 'normal';
+        selectedLabel.style.fontWeight = '500';
+      }
+    }
+
+    /* Busca dados do Supabase apenas na primeira abertura */
+    if (!dataFetched) {
+      fetchBookedDates().then(function () { renderMonth(); });
+    } else {
+      renderMonth();
+    }
+
+    setTimeout(function () { if (closeBtn) closeBtn.focus(); }, 60);
+  }
+
+  /* Fecha o modal */
+  function closeModal() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+    var trigger = document.getElementById('btnVerificarData');
+    if (trigger) trigger.focus();
+  }
+
+  /* Navegação de meses */
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function () {
+      if (viewMonth === 0) { viewMonth = 11; viewYear--; }
+      else { viewMonth--; }
+      renderMonth();
+    });
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function () {
+      if (viewMonth === 11) { viewMonth = 0; viewYear++; }
+      else { viewMonth++; }
+      renderMonth();
+    });
+  }
+
+  /* Fechar */
+  if (closeBtn)  closeBtn.addEventListener('click', closeModal);
+  if (backdrop)  backdrop.addEventListener('click', closeModal);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.hidden) closeModal();
+  });
+
+  /* Botão principal "Verificar minha data" */
+  var btnVerificar = document.getElementById('btnVerificarData');
+  if (btnVerificar) {
+    btnVerificar.addEventListener('click', function () { openModal(null); });
+  }
+
+  /* Chips disponíveis abrem o calendário na data certa */
+  document.querySelectorAll('.data-chip--ok[data-iso]').forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      openModal(this.getAttribute('data-iso'));
+    });
+    chip.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModal(this.getAttribute('data-iso'));
+      }
+    });
+    /* Cursor personalizado */
+    chip.addEventListener('mouseenter', function () { document.body.classList.add('cursor-hover'); });
+    chip.addEventListener('mouseleave', function () { document.body.classList.remove('cursor-hover'); });
+  });
+
+})();

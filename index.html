@@ -509,24 +509,24 @@
         <p class="label label--claro">Agenda 2026</p>
         <h2 id="datas-titulo">Algumas datas ainda<br><em>podem ser suas</em></h2>
         <p>As reservas acontecem com meses de antecedência. Se você tem uma data em mente — ou quer saber quais ainda estão livres — fale com a gente agora.</p>
-        <a href="#orcamento" class="btn btn-gold" style="margin-top:var(--sp-6);">Verificar minha data</a>
+        <button type="button" id="btnVerificarData" class="btn btn-gold" style="margin-top:var(--sp-6);">Verificar minha data</button>
       </div>
 
       <div class="datas-chips js-fade js-fade-delay-1" aria-label="Datas de 2026">
         <div class="datas-mes">
           <span class="datas-mes-label">Abril 2026</span>
           <div class="chips-row">
-            <div class="data-chip data-chip--ok">
+            <div class="data-chip data-chip--ok" role="button" tabindex="0" data-iso="2026-04-11" aria-label="11 de abril de 2026 — disponível">
               <span class="chip-dia">11</span>
               <span class="chip-label">Sáb</span>
               <span class="chip-status">Disponível</span>
             </div>
-            <div class="data-chip data-chip--ok">
+            <div class="data-chip data-chip--ok" role="button" tabindex="0" data-iso="2026-04-18" aria-label="18 de abril de 2026 — disponível">
               <span class="chip-dia">18</span>
               <span class="chip-label">Sáb</span>
               <span class="chip-status">Disponível</span>
             </div>
-            <div class="data-chip data-chip--off">
+            <div class="data-chip data-chip--off" aria-label="25 de abril de 2026 — reservado">
               <span class="chip-dia">25</span>
               <span class="chip-label">Sáb</span>
               <span class="chip-status">Reservado</span>
@@ -537,27 +537,27 @@
         <div class="datas-mes">
           <span class="datas-mes-label">Maio 2026</span>
           <div class="chips-row">
-            <div class="data-chip data-chip--off">
+            <div class="data-chip data-chip--off" aria-label="2 de maio de 2026 — reservado">
               <span class="chip-dia">02</span>
               <span class="chip-label">Sáb</span>
               <span class="chip-status">Reservado</span>
             </div>
-            <div class="data-chip data-chip--ok">
+            <div class="data-chip data-chip--ok" role="button" tabindex="0" data-iso="2026-05-09" aria-label="9 de maio de 2026 — disponível">
               <span class="chip-dia">09</span>
               <span class="chip-label">Sáb</span>
               <span class="chip-status">Disponível</span>
             </div>
-            <div class="data-chip data-chip--ok">
+            <div class="data-chip data-chip--ok" role="button" tabindex="0" data-iso="2026-05-16" aria-label="16 de maio de 2026 — disponível">
               <span class="chip-dia">16</span>
               <span class="chip-label">Sáb</span>
               <span class="chip-status">Disponível</span>
             </div>
-            <div class="data-chip data-chip--off">
+            <div class="data-chip data-chip--off" aria-label="23 de maio de 2026 — reservado">
               <span class="chip-dia">23</span>
               <span class="chip-label">Sáb</span>
               <span class="chip-status">Reservado</span>
             </div>
-            <div class="data-chip data-chip--ok">
+            <div class="data-chip data-chip--ok" role="button" tabindex="0" data-iso="2026-05-30" aria-label="30 de maio de 2026 — disponível">
               <span class="chip-dia">30</span>
               <span class="chip-label">Sáb</span>
               <span class="chip-status">Disponível</span>
@@ -568,17 +568,17 @@
         <div class="datas-mes">
           <span class="datas-mes-label">Junho 2026</span>
           <div class="chips-row">
-            <div class="data-chip data-chip--ok">
+            <div class="data-chip data-chip--ok" role="button" tabindex="0" data-iso="2026-06-06" aria-label="6 de junho de 2026 — disponível">
               <span class="chip-dia">06</span>
               <span class="chip-label">Sáb</span>
               <span class="chip-status">Disponível</span>
             </div>
-            <div class="data-chip data-chip--off">
+            <div class="data-chip data-chip--off" aria-label="13 de junho de 2026 — reservado">
               <span class="chip-dia">13</span>
               <span class="chip-label">Sáb</span>
               <span class="chip-status">Reservado</span>
             </div>
-            <div class="data-chip data-chip--ok">
+            <div class="data-chip data-chip--ok" role="button" tabindex="0" data-iso="2026-06-20" aria-label="20 de junho de 2026 — disponível">
               <span class="chip-dia">20</span>
               <span class="chip-label">Sáb</span>
               <span class="chip-status">Disponível</span>
@@ -968,6 +968,88 @@
     <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
     <span>Fale conosco!</span>
   </a>
+
+  <!-- ══════════════════════════════════════════════
+       MODAL: CALENDÁRIO DE DISPONIBILIDADE
+       ══════════════════════════════════════════════ -->
+  <div id="calendarModal" class="cal-modal" role="dialog" aria-modal="true"
+       aria-labelledby="calModalTitle" hidden>
+    <div class="cal-modal-backdrop" id="calModalBackdrop"></div>
+    <div class="cal-modal-panel">
+
+      <div class="cal-modal-header">
+        <div>
+          <p class="label" style="margin-bottom:var(--sp-1);color:var(--ouro-500);">Agenda 2026</p>
+          <h2 class="cal-modal-title" id="calModalTitle">Verificar disponibilidade</h2>
+        </div>
+        <button class="cal-close" id="calModalClose" aria-label="Fechar calendário" type="button">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="cal-nav">
+        <button class="cal-nav-btn" id="calPrevMonth" aria-label="Mês anterior" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <span class="cal-month-label" id="calMonthLabel" aria-live="polite"></span>
+        <button class="cal-nav-btn" id="calNextMonth" aria-label="Próximo mês" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="cal-weekdays" aria-hidden="true">
+        <span>Dom</span><span>Seg</span><span>Ter</span>
+        <span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span>
+      </div>
+
+      <div class="cal-loading" id="calLoading" hidden>
+        <span class="cal-spinner" aria-hidden="true"></span>
+        Carregando disponibilidade…
+      </div>
+
+      <div class="cal-grid" id="calGrid" role="grid" aria-label="Dias do mês"></div>
+
+      <div class="cal-legend" aria-label="Legenda">
+        <span class="cal-legend-item">
+          <span class="cal-legend-dot cal-legend-dot--ok"></span> Disponível
+        </span>
+        <span class="cal-legend-item">
+          <span class="cal-legend-dot cal-legend-dot--off"></span> Reservado
+        </span>
+        <span class="cal-legend-item">
+          <span class="cal-legend-dot cal-legend-dot--past"></span> Passado
+        </span>
+      </div>
+
+      <div class="cal-error" id="calError" hidden role="alert">
+        Não foi possível carregar a agenda. Tente novamente ou fale pelo WhatsApp.
+      </div>
+
+      <div class="cal-footer">
+        <p class="cal-selected-label" id="calSelectedLabel">
+          Selecione uma data disponível acima
+        </p>
+        <button class="btn btn-gold cal-confirm-btn" id="calConfirm"
+                type="button" disabled aria-disabled="true">
+          Confirmar data e solicitar orçamento
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>

@@ -59,3 +59,56 @@ CREATE POLICY "update_authenticated"
   ON orcamentos FOR UPDATE
   TO authenticated
   USING (true);
+
+
+-- ══════════════════════════════════════════════════════════════
+--  Tabela AGENDA — datas bloqueadas (visível publicamente)
+--  O calendário do site lê desta tabela para mostrar disponibilidade
+-- ══════════════════════════════════════════════════════════════
+
+CREATE TABLE IF NOT EXISTS agenda (
+  id            uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  created_at    timestamptz NOT NULL DEFAULT now(),
+  data          date NOT NULL UNIQUE,              -- data do evento (YYYY-MM-DD)
+  orcamento_id  uuid REFERENCES orcamentos(id) ON DELETE SET NULL,
+  descricao     text,                              -- ex: "Casamento Silva" (uso interno)
+  status        text NOT NULL DEFAULT 'reservado'
+    CHECK (status IN ('reservado', 'bloqueado'))   -- bloqueado = manutenção etc.
+);
+
+CREATE INDEX IF NOT EXISTS agenda_data_idx ON agenda (data);
+
+ALTER TABLE agenda ENABLE ROW LEVEL SECURITY;
+
+-- Visitantes anônimos podem LER (para o calendário do site)
+CREATE POLICY "agenda_select_public"
+  ON agenda FOR SELECT
+  USING (true);
+
+-- Somente admins autenticados podem gravar / alterar / excluir
+CREATE POLICY "agenda_insert_authenticated"
+  ON agenda FOR INSERT
+  TO authenticated
+  WITH CHECK (true);
+
+CREATE POLICY "agenda_update_authenticated"
+  ON agenda FOR UPDATE
+  TO authenticated
+  USING (true);
+
+CREATE POLICY "agenda_delete_authenticated"
+  ON agenda FOR DELETE
+  TO authenticated
+  USING (true);
+
+-- ══════════════════════════════════════════════════════════════
+--  Datas já reservadas (para popular o calendário inicial)
+--  Execute este INSERT após criar a tabela acima
+-- ══════════════════════════════════════════════════════════════
+
+INSERT INTO agenda (data, descricao, status) VALUES
+  ('2026-04-25', 'Reservado', 'reservado'),
+  ('2026-05-02', 'Reservado', 'reservado'),
+  ('2026-05-23', 'Reservado', 'reservado'),
+  ('2026-06-13', 'Reservado', 'reservado')
+ON CONFLICT (data) DO NOTHING;
