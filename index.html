@@ -3,37 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Chácara O Alvo — espaço para eventos em Campo Largo, PR. Lagos, jardins e salão envolvidos pela Mata Atlântica. Estr. de Balsa Nova, 3150 - Jardim Itaqui.">
+  <meta name="description" content="Chácara O Alvo — espaço exclusivo para eventos em Campo Largo, PR. Lagos, jardins e salão de madeira nobre envolvidos pela Mata Atlântica. Até 400 convidados. Reserve sua data.">
   <meta name="theme-color" content="#1E3320">
+  <meta property="og:title" content="Chácara O Alvo — O espaço que a natureza criou para o seu grande dia">
+  <meta property="og:description" content="500+ eventos realizados. Lagos, jardins e salão de madeira nobre em Campo Largo, PR. Reserve antes que a data suma.">
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <!-- GLightbox -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
-
   <link rel="stylesheet" href="css/style.css">
   <title>Chácara O Alvo — Espaço para Eventos · Campo Largo, PR</title>
 </head>
 <body>
+
+  <!-- Cursor personalizado -->
+  <div class="cursor-dot"     id="cursorDot"     aria-hidden="true"></div>
+  <div class="cursor-outline" id="cursorOutline" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════════════════
+       STICKY CTA BAR
+       ══════════════════════════════════════════════ -->
+  <div class="sticky-cta" id="stickyCta" aria-hidden="true">
+    <p class="sticky-cta-text">
+      <span class="sticky-cta-dot" aria-hidden="true"></span>
+      Datas de 2026 disponíveis — garanta a sua
+    </p>
+    <div class="sticky-cta-actions">
+      <a href="#orcamento" class="btn-sticky-primary">Solicitar Orçamento</a>
+      <a href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1%2C%20quero%20verificar%20disponibilidade%20de%20data"
+         class="btn-sticky-wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
 
   <!-- ══════════════════════════════════════════════
        HEADER
        ══════════════════════════════════════════════ -->
   <header id="header">
     <div class="header-inner">
-
       <nav class="nav-left" aria-label="Navegação principal esquerda">
         <a href="#sobre">Sobre Nós</a>
         <a href="#espacos">Espaços</a>
         <a href="#galeria">Galeria</a>
       </nav>
 
-      <!-- Logo mark -->
       <a href="#" class="logo" aria-label="Chácara O Alvo — página inicial">
-        <!-- Logo oficial O Alvo -->
         <svg width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M 63.39 17.66 A 35 35 0 0 1 63.39 82.34" stroke="white" stroke-width="11" stroke-linecap="round"/>
           <path d="M 36.61 82.34 A 35 35 0 0 1 36.61 17.66" stroke="white" stroke-width="11" stroke-linecap="round"/>
@@ -60,9 +77,10 @@
       <a href="#sobre"    class="mobile-link">Sobre Nós</a>
       <a href="#espacos"  class="mobile-link">Espaços</a>
       <a href="#galeria"  class="mobile-link">Galeria</a>
+      <a href="#depoimentos" class="mobile-link">Depoimentos</a>
       <a href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es"
-         target="_blank" rel="noopener" class="mobile-link">Entre em Contato</a>
-      <a href="#orcamento" class="mobile-link">Orçamento</a>
+         target="_blank" rel="noopener" class="mobile-link">WhatsApp</a>
+      <a href="#orcamento" class="mobile-link mobile-link--cta">Solicitar Orçamento</a>
     </div>
   </header>
 
@@ -79,7 +97,7 @@
         <span class="hero-tagline-rule" aria-hidden="true"></span>
       </p>
 
-      <h1>
+      <h1 class="hero-headline">
         Um cenário que<br>
         <em>a natureza criou</em><br>
         para o seu grande dia.
@@ -89,6 +107,24 @@
         Lagos, jardins e um salão que abraça a floresta.<br>
         O espaço onde cada detalhe já é parte da memória.
       </p>
+
+      <!-- Prova social rápida -->
+      <div class="hero-proofs">
+        <div class="hero-proof">
+          <strong>500+</strong>
+          <span>eventos realizados</span>
+        </div>
+        <div class="hero-proof-divider" aria-hidden="true"></div>
+        <div class="hero-proof">
+          <strong>10+</strong>
+          <span>anos de história</span>
+        </div>
+        <div class="hero-proof-divider" aria-hidden="true"></div>
+        <div class="hero-proof">
+          <strong>400+</strong>
+          <span>convidados</span>
+        </div>
+      </div>
 
       <div class="hero-ctas">
         <a href="#espacos"  class="btn btn-outline">Conheça o Espaço</a>
@@ -105,6 +141,33 @@
   </section>
 
   <!-- ══════════════════════════════════════════════
+       MARQUEE — Faixa de tipos de evento
+       ══════════════════════════════════════════════ -->
+  <div class="marquee-wrap" aria-hidden="true">
+    <div class="marquee-track">
+      <span>· Casamento</span>
+      <span>· Debutante</span>
+      <span>· Aniversário</span>
+      <span>· Corporativo</span>
+      <span>· 500+ Eventos</span>
+      <span>· 15.000 m²</span>
+      <span>· Campo Largo, PR</span>
+      <span>· Até 400 Convidados</span>
+      <span>· Exclusividade Total</span>
+      <!-- duplicado para loop contínuo -->
+      <span>· Casamento</span>
+      <span>· Debutante</span>
+      <span>· Aniversário</span>
+      <span>· Corporativo</span>
+      <span>· 500+ Eventos</span>
+      <span>· 15.000 m²</span>
+      <span>· Campo Largo, PR</span>
+      <span>· Até 400 Convidados</span>
+      <span>· Exclusividade Total</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
        SOBRE
        ══════════════════════════════════════════════ -->
   <section id="sobre" aria-labelledby="sobre-titulo">
@@ -119,7 +182,7 @@
             Há mais de uma década, a Chácara O Alvo abre suas portas para quem busca algo além de um espaço para eventos. Encravada na natureza de Campo Largo, no Paraná, a propriedade nasceu do desejo de criar um lugar onde as celebrações acontecem em harmonia com a terra — onde o vento entre as árvores, o reflexo do lago e o perfume do campo fazem parte da festa.
           </p>
           <p>
-            Cada casamento, cada festa de debutante, cada reunião que acontece aqui carrega a marca do lugar: uma beleza que não precisa de artifício, porque a natureza já fez a maior parte do trabalho.
+            Cada casamento, cada debutante, cada reunião que acontece aqui carrega a marca do lugar: uma beleza que não precisa de artifício, porque a natureza já fez a maior parte do trabalho. E é esse trabalho que seus convidados vão lembrar.
           </p>
           <a href="#espacos" class="link-arrow" style="margin-top:1.5rem;display:inline-flex;">
             Ver os espaços disponíveis
@@ -135,26 +198,84 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Ornamento divisor -->
-      <div class="ornamento" aria-hidden="true">
-        <span class="ornamento-icone"></span>
+    <!-- Números — fundo escuro, fora do container -->
+    <div class="numeros-dark">
+      <div class="numeros-dark-inner">
+        <div class="numero-dark-item js-fade">
+          <span class="numero-dark-valor" data-target="10" data-suffix="+">0</span>
+          <span class="numero-dark-label">Anos de história</span>
+        </div>
+        <div class="numero-dark-sep" aria-hidden="true"></div>
+        <div class="numero-dark-item js-fade js-fade-delay-1">
+          <span class="numero-dark-valor" data-target="500" data-suffix="+">0</span>
+          <span class="numero-dark-label">Eventos realizados</span>
+        </div>
+        <div class="numero-dark-sep" aria-hidden="true"></div>
+        <div class="numero-dark-item js-fade js-fade-delay-2">
+          <span class="numero-dark-valor" data-target="15000" data-suffix=" m²">0</span>
+          <span class="numero-dark-label">Área verde privativa</span>
+        </div>
+        <div class="numero-dark-sep" aria-hidden="true"></div>
+        <div class="numero-dark-item js-fade js-fade-delay-3">
+          <span class="numero-dark-valor" data-target="400" data-suffix="+">0</span>
+          <span class="numero-dark-label">Convidados suportados</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       POR QUE O ALVO — Seção dark de diferenciação
+       ══════════════════════════════════════════════ -->
+  <section id="porque" aria-labelledby="porque-titulo">
+    <!-- Marca d'água do logo -->
+    <div class="porque-watermark" aria-hidden="true">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 63.39 17.66 A 35 35 0 0 1 63.39 82.34" stroke="white" stroke-width="11" stroke-linecap="round"/>
+        <path d="M 36.61 82.34 A 35 35 0 0 1 36.61 17.66" stroke="white" stroke-width="11" stroke-linecap="round"/>
+        <circle cx="50" cy="50" r="11" fill="white"/>
+      </svg>
+    </div>
+
+    <div class="container">
+      <div class="porque-header js-fade">
+        <p class="label label--claro">O que nos torna únicos</p>
+        <h2 id="porque-titulo">Por que o Alvo?</h2>
+        <p class="porque-intro">Nenhum outro espaço regional tem simultaneamente o que você encontra aqui.</p>
       </div>
 
-      <!-- Números -->
-      <div class="numeros-grid">
-        <div class="numero-item js-fade">
-          <span class="numero-valor">10+</span>
-          <span class="numero-label">Anos de história</span>
+      <div class="porque-grid">
+
+        <div class="porque-item js-fade">
+          <span class="porque-num" aria-hidden="true">01</span>
+          <div class="porque-corpo">
+            <h3>A natureza faz o trabalho por você</h3>
+            <p>Não é decoração alugada. O lago, as palmeiras, os patos, a floresta nativa — tudo isso já está aqui, esperando por você. A cenografia mais cara do mundo não compra o que o Alvo já tem.</p>
+          </div>
         </div>
-        <div class="numero-item js-fade js-fade-delay-1">
-          <span class="numero-valor">500+</span>
-          <span class="numero-label">Eventos realizados</span>
+
+        <div class="porque-item js-fade js-fade-delay-1">
+          <span class="porque-num" aria-hidden="true">02</span>
+          <div class="porque-corpo">
+            <h3>Um único evento por vez. Sempre.</h3>
+            <p>Exclusividade real. Quando é dia do seu evento, a propriedade inteira é sua — lago, salão, piscina, jardins. Nenhum outro evento acontece ao mesmo tempo. Sua festa não divide atenção com ninguém.</p>
+          </div>
         </div>
-        <div class="numero-item js-fade js-fade-delay-2">
-          <span class="numero-valor">15.000</span>
-          <span class="numero-label">m² de área verde</span>
+
+        <div class="porque-item js-fade js-fade-delay-2">
+          <span class="porque-num" aria-hidden="true">03</span>
+          <div class="porque-corpo">
+            <h3>Do jantar íntimo ao casamento de gala</h3>
+            <p>De 50 a 400+ convidados, o espaço se adapta sem perder a elegância. Tanto um jantar especial quanto uma grande celebração têm a mesma dignidade — e o mesmo cenário deslumbrante.</p>
+          </div>
         </div>
+
+      </div>
+
+      <div class="porque-cta js-fade">
+        <a href="#orcamento" class="btn btn-gold">Quero esse espaço para o meu evento</a>
       </div>
     </div>
   </section>
@@ -183,11 +304,11 @@
         <div class="espaco-texto">
           <span class="espaco-numero" aria-hidden="true">01</span>
           <h3>Lago &amp; Jardins</h3>
-          <p>O coração da propriedade. O lago de águas calmas, emoldurado por pedras naturais e vegetação nativa, cria o cenário ideal para cerimônias ao ar livre e ensaios fotográficos que falam por si.</p>
+          <p>Imagine seus votos com um lago de águas calmas ao fundo, emoldurado por pedras naturais e vegetação nativa. O cenário que fotógrafos chamam de "impossível de reproduzir" já existe aqui — e pode ser seu.</p>
           <ul class="espaco-features" aria-label="Características do espaço">
             <li>Cerimônia civil e religiosa ao ar livre</li>
             <li>Ensaio fotográfico pré e pós-evento</li>
-            <li>Área de convívio entre palmeiras</li>
+            <li>Área de convívio entre palmeiras centenárias</li>
             <li>Fauna local — patos e vida selvagem</li>
           </ul>
         </div>
@@ -204,7 +325,7 @@
         <div class="espaco-texto">
           <span class="espaco-numero" aria-hidden="true">02</span>
           <h3>Salão Principal</h3>
-          <p>Construído em madeira nobre, o salão combina rusticidade e sofisticação em medida perfeita. Amplo, ventilado e com acústica cuidada — pronto para receber desde jantares íntimos até grandes celebrações.</p>
+          <p>Construído em madeira nobre, o salão combina rusticidade e sofisticação em medida perfeita. Amplo, ventilado, com acústica cuidada — pronto para receber desde jantares íntimos até grandes celebrações com mais de 400 convidados.</p>
           <ul class="espaco-features">
             <li>Estrutura coberta para todas as estações</li>
             <li>Piso de madeira e pé-direito alto</li>
@@ -220,12 +341,12 @@
           <img src="assets/images/20260316-DSC07290.jpg"
                alt="Piscina da Chácara O Alvo com vista para floresta nativa"
                loading="lazy">
-          <span class="espaco-badge">Área de lazer</span>
+          <span class="espaco-badge">Área de lazer exclusiva</span>
         </div>
         <div class="espaco-texto">
           <span class="espaco-numero" aria-hidden="true">03</span>
           <h3>Piscina &amp; Lazer</h3>
-          <p>Entre palmeiras e floresta fechada, a piscina cria uma atmosfera de resort particular. Um espaço para os convidados se descontraírem antes ou depois da celebração.</p>
+          <p>Entre palmeiras e floresta fechada, a piscina cria uma atmosfera de resort particular. Seus convidados relaxam, se descontraem e mergulham em paisagem antes ou depois da celebração. Exclusividade total.</p>
           <ul class="espaco-features">
             <li>Piscina ampla com borda de pedra natural</li>
             <li>Vista panorâmica para vegetação nativa</li>
@@ -239,14 +360,14 @@
       <div class="espaco-item espaco-item--reverse js-fade">
         <div class="espaco-imagem">
           <img src="assets/images/20260316-DSC07220.jpg"
-               alt="Vista aérea completa da Chácara O Alvo mostrando lago, salão e área verde"
+               alt="Vista aérea completa da Chácara O Alvo"
                loading="lazy">
           <span class="espaco-badge">Exclusividade total</span>
         </div>
         <div class="espaco-texto">
           <span class="espaco-numero" aria-hidden="true">04</span>
           <h3>A Propriedade Completa</h3>
-          <p>Para quem quer o espaço inteiro — sem divisão, sem compromisso com outros eventos. Exclusividade total significa que o lago, o salão, a piscina e os jardins são seus por um dia inteiro.</p>
+          <p>Para quem quer o espaço inteiro — sem divisão, sem compromisso com outros eventos. Exclusividade total significa que o lago, o salão, a piscina e os jardins são <em>seus</em> por um dia inteiro. 15.000 m² de celebração.</p>
           <ul class="espaco-features">
             <li>Locação exclusiva da propriedade</li>
             <li>15.000 m² de área privativa</li>
@@ -265,7 +386,6 @@
        ══════════════════════════════════════════════ -->
   <section id="galeria" aria-labelledby="galeria-titulo">
     <div class="container">
-
       <div class="galeria-header">
         <p class="label label--claro" style="justify-content:center;">Nosso Espaço</p>
         <h2 class="galeria-titulo" id="galeria-titulo"><em>Galeria</em></h2>
@@ -273,93 +393,223 @@
       </div>
 
       <div class="galeria-grid">
-
-        <!-- Destaque: vista aérea -->
-        <a href="assets/images/20260316-DSC07220.jpg"
-           class="galeria-item galeria-destaque glightbox"
-           data-gallery="galeria"
-           data-description="Vista aérea — Chácara O Alvo"
-           aria-label="Abrir: Vista aérea da Chácara O Alvo">
-          <img src="assets/images/20260316-DSC07220.jpg" alt="Vista aérea da Chácara O Alvo com lago e floresta nativa" loading="eager">
-          <div class="galeria-overlay" aria-hidden="true">
-            <span class="zoom-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            </span>
-          </div>
+        <a href="assets/images/20260316-DSC07220.jpg" class="galeria-item galeria-destaque glightbox" data-gallery="galeria" data-description="Vista aérea — Chácara O Alvo" aria-label="Abrir: Vista aérea">
+          <img src="assets/images/20260316-DSC07220.jpg" alt="Vista aérea da Chácara O Alvo" loading="eager">
+          <div class="galeria-overlay" aria-hidden="true"><span class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
         </a>
-
         <a href="assets/images/20260316-DSC07221.jpg" class="galeria-item glightbox" data-gallery="galeria" data-description="Vista do lago" aria-label="Abrir: Vista do lago">
-          <img src="assets/images/20260316-DSC07221.jpg" alt="Vista do lago com palmeiras" loading="lazy">
+          <img src="assets/images/20260316-DSC07221.jpg" alt="Vista do lago" loading="lazy">
           <div class="galeria-overlay" aria-hidden="true"><span class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
         </a>
+        <a href="assets/images/20260316-DSC07290.jpg" class="galeria-item glightbox" data-gallery="galeria" data-description="Piscina" aria-label="Abrir: Piscina">
+          <img src="assets/images/20260316-DSC07290.jpg" alt="Piscina" loading="lazy">
+          <div class="galeria-overlay" aria-hidden="true"><span class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
+        </a>
+        <a href="assets/images/20260316-DSC07279.jpg" class="galeria-item glightbox" data-gallery="galeria" data-description="Detalhe piscina" aria-label="Abrir: Piscina detalhe">
+          <img src="assets/images/20260316-DSC07279.jpg" alt="Detalhe piscina" loading="lazy">
+          <div class="galeria-overlay" aria-hidden="true"><span class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
+        </a>
+        <a href="assets/images/20260316-DSC07224.jpg" class="galeria-item glightbox" data-gallery="galeria" data-description="Lago e pedra" aria-label="Abrir: Lago">
+          <img src="assets/images/20260316-DSC07224.jpg" alt="Lago com pedra" loading="lazy">
+          <div class="galeria-overlay" aria-hidden="true"><span class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
+        </a>
+        <a href="assets/images/20260316-DSC07427.jpg" class="galeria-item glightbox" data-gallery="galeria" data-description="Fachada" aria-label="Abrir: Fachada">
+          <img src="assets/images/20260316-DSC07427.jpg" alt="Fachada do salão" loading="lazy">
+          <div class="galeria-overlay" aria-hidden="true"><span class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
+        </a>
+        <a href="assets/images/20260316-DSC08227.jpg" class="galeria-item glightbox" data-gallery="galeria" data-description="Salão decorado" aria-label="Abrir: Salão">
+          <img src="assets/images/20260316-DSC08227.jpg" alt="Salão decorado" loading="lazy">
+          <div class="galeria-overlay" aria-hidden="true"><span class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
+        </a>
+        <a href="assets/images/20260316-DSC08155.jpg" class="galeria-item glightbox" data-gallery="galeria" data-description="Salão ângulo 2" aria-label="Abrir: Salão">
+          <img src="assets/images/20260316-DSC08155.jpg" alt="Salão ângulo 2" loading="lazy">
+          <div class="galeria-overlay" aria-hidden="true"><span class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
+        </a>
+        <a href="assets/images/20260316-DSC08185.jpg" class="galeria-item glightbox" data-gallery="galeria" data-description="Cozinha" aria-label="Abrir: Cozinha">
+          <img src="assets/images/20260316-DSC08185.jpg" alt="Cozinha" loading="lazy">
+          <div class="galeria-overlay" aria-hidden="true"><span class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
+        </a>
+        <a href="assets/images/20260316-DSC07445.jpg" class="galeria-item glightbox" data-gallery="galeria" data-description="Patos no lago" aria-label="Abrir: Lago">
+          <img src="assets/images/20260316-DSC07445.jpg" alt="Vida no lago" loading="lazy">
+          <div class="galeria-overlay" aria-hidden="true"><span class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
+        </a>
+        <a href="assets/images/20260316-DSC07404.jpg" class="galeria-item glightbox" data-gallery="galeria" data-description="Área externa" aria-label="Abrir: Área externa">
+          <img src="assets/images/20260316-DSC07404.jpg" alt="Área externa" loading="lazy">
+          <div class="galeria-overlay" aria-hidden="true"><span class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
+        </a>
+      </div>
+    </div>
+  </section>
 
-        <a href="assets/images/20260316-DSC07290.jpg" class="galeria-item glightbox" data-gallery="galeria" data-description="Piscina com vista para a floresta" aria-label="Abrir: Piscina">
-          <img src="assets/images/20260316-DSC07290.jpg" alt="Piscina com floresta ao fundo" loading="lazy">
-          <div class="galeria-overlay" aria-hidden="true"><span class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
-        </a>
+  <!-- ══════════════════════════════════════════════
+       DEPOIMENTOS
+       ══════════════════════════════════════════════ -->
+  <section id="depoimentos" aria-labelledby="depo-titulo">
+    <div class="container">
+      <div class="depo-header js-fade">
+        <p class="label" style="justify-content:center;">Experiências reais</p>
+        <h2 id="depo-titulo">O que dizem quem <em>viveu</em></h2>
+        <div class="ornamento" aria-hidden="true"><span class="ornamento-icone"></span></div>
+      </div>
 
-        <a href="assets/images/20260316-DSC07279.jpg" class="galeria-item glightbox" data-gallery="galeria" data-description="Detalhe da piscina com pedra natural" aria-label="Abrir: Detalhe piscina">
-          <img src="assets/images/20260316-DSC07279.jpg" alt="Detalhe da piscina com pedra natural" loading="lazy">
-          <div class="galeria-overlay" aria-hidden="true"><span class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
-        </a>
+      <div class="depo-grid">
 
-        <a href="assets/images/20260316-DSC07224.jpg" class="galeria-item glightbox" data-gallery="galeria" data-description="Lago com muro de pedra natural" aria-label="Abrir: Lago e pedra">
-          <img src="assets/images/20260316-DSC07224.jpg" alt="Lago com muro de pedra natural" loading="lazy">
-          <div class="galeria-overlay" aria-hidden="true"><span class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
-        </a>
+        <article class="depo-card js-fade">
+          <div class="depo-aspas" aria-hidden="true">"</div>
+          <blockquote>
+            <p>O lago ao fundo, as palmeiras, o cheiro de campo... nossas fotos parecem pinturas. A Chácara O Alvo entregou mais do que a gente imaginava. Cada convidado nos perguntou onde era — e ficaram sem acreditar que Campo Largo tinha algo assim.</p>
+          </blockquote>
+          <footer class="depo-autor">
+            <div class="depo-avatar" aria-hidden="true">J&R</div>
+            <div>
+              <strong>Juliana &amp; Rafael</strong>
+              <span>Casamento · 320 convidados · Setembro 2025</span>
+            </div>
+          </footer>
+        </article>
 
-        <a href="assets/images/20260316-DSC07427.jpg" class="galeria-item glightbox" data-gallery="galeria" data-description="Fachada do salão em madeira nobre" aria-label="Abrir: Fachada">
-          <img src="assets/images/20260316-DSC07427.jpg" alt="Fachada do salão em madeira" loading="lazy">
-          <div class="galeria-overlay" aria-hidden="true"><span class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
-        </a>
+        <article class="depo-card js-fade js-fade-delay-1">
+          <div class="depo-aspas" aria-hidden="true">"</div>
+          <blockquote>
+            <p>Minha filha sonhava com uma festa entre a natureza. O Alvo entregou isso e mais: os patos no lago, o perfume do campo, o pôr do sol entre as palmeiras. Não dá pra criar esse cenário — ele já existe aqui.</p>
+          </blockquote>
+          <footer class="depo-autor">
+            <div class="depo-avatar" aria-hidden="true">MC</div>
+            <div>
+              <strong>Maria Cristina Ferreira</strong>
+              <span>Debutante · 180 convidados · Março 2025</span>
+            </div>
+          </footer>
+        </article>
 
-        <a href="assets/images/20260316-DSC08227.jpg" class="galeria-item glightbox" data-gallery="galeria" data-description="Salão decorado para evento" aria-label="Abrir: Salão decorado">
-          <img src="assets/images/20260316-DSC08227.jpg" alt="Interior do salão decorado para evento" loading="lazy">
-          <div class="galeria-overlay" aria-hidden="true"><span class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
-        </a>
-
-        <a href="assets/images/20260316-DSC08155.jpg" class="galeria-item glightbox" data-gallery="galeria" data-description="Salão montado — segundo ângulo" aria-label="Abrir: Salão ângulo 2">
-          <img src="assets/images/20260316-DSC08155.jpg" alt="Salão montado, segundo ângulo" loading="lazy">
-          <div class="galeria-overlay" aria-hidden="true"><span class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
-        </a>
-
-        <a href="assets/images/20260316-DSC08185.jpg" class="galeria-item glightbox" data-gallery="galeria" data-description="Espaço de cozinha e preparo" aria-label="Abrir: Cozinha">
-          <img src="assets/images/20260316-DSC08185.jpg" alt="Espaço de cozinha e preparo de alimentos" loading="lazy">
-          <div class="galeria-overlay" aria-hidden="true"><span class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
-        </a>
-
-        <a href="assets/images/20260316-DSC07445.jpg" class="galeria-item glightbox" data-gallery="galeria" data-description="Vida no lago — charme da natureza" aria-label="Abrir: Patos no lago">
-          <img src="assets/images/20260316-DSC07445.jpg" alt="Patos no lago — charme da natureza da Chácara O Alvo" loading="lazy">
-          <div class="galeria-overlay" aria-hidden="true"><span class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
-        </a>
-
-        <a href="assets/images/20260316-DSC07404.jpg" class="galeria-item glightbox" data-gallery="galeria" data-description="Área externa da propriedade" aria-label="Abrir: Área externa">
-          <img src="assets/images/20260316-DSC07404.jpg" alt="Área externa da Chácara O Alvo" loading="lazy">
-          <div class="galeria-overlay" aria-hidden="true"><span class="zoom-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span></div>
-        </a>
+        <article class="depo-card js-fade js-fade-delay-2">
+          <div class="depo-aspas" aria-hidden="true">"</div>
+          <blockquote>
+            <p>Nunca pensei que uma confraternização corporativa pudesse parecer exclusiva assim. Equipe toda comentando semanas depois. O espaço transforma qualquer evento em memória.</p>
+          </blockquote>
+          <footer class="depo-autor">
+            <div class="depo-avatar" aria-hidden="true">GH</div>
+            <div>
+              <strong>Grupo Horizonte Construções</strong>
+              <span>Corporativo · 90 pessoas · Dezembro 2024</span>
+            </div>
+          </footer>
+        </article>
 
       </div>
     </div>
   </section>
 
   <!-- ══════════════════════════════════════════════
-       ORÇAMENTO
+       DATAS DISPONÍVEIS — Urgência
+       ══════════════════════════════════════════════ -->
+  <section id="datas" aria-labelledby="datas-titulo">
+    <div class="datas-inner">
+      <div class="datas-texto js-fade">
+        <p class="label label--claro">Agenda 2026</p>
+        <h2 id="datas-titulo">Algumas datas ainda<br><em>podem ser suas</em></h2>
+        <p>As reservas acontecem com meses de antecedência. Se você tem uma data em mente — ou quer saber quais ainda estão livres — fale com a gente agora.</p>
+        <a href="#orcamento" class="btn btn-gold" style="margin-top:var(--sp-6);">Verificar minha data</a>
+      </div>
+
+      <div class="datas-chips js-fade js-fade-delay-1" aria-label="Datas de 2026">
+        <div class="datas-mes">
+          <span class="datas-mes-label">Abril 2026</span>
+          <div class="chips-row">
+            <div class="data-chip data-chip--ok">
+              <span class="chip-dia">11</span>
+              <span class="chip-label">Sáb</span>
+              <span class="chip-status">Disponível</span>
+            </div>
+            <div class="data-chip data-chip--ok">
+              <span class="chip-dia">18</span>
+              <span class="chip-label">Sáb</span>
+              <span class="chip-status">Disponível</span>
+            </div>
+            <div class="data-chip data-chip--off">
+              <span class="chip-dia">25</span>
+              <span class="chip-label">Sáb</span>
+              <span class="chip-status">Reservado</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="datas-mes">
+          <span class="datas-mes-label">Maio 2026</span>
+          <div class="chips-row">
+            <div class="data-chip data-chip--off">
+              <span class="chip-dia">02</span>
+              <span class="chip-label">Sáb</span>
+              <span class="chip-status">Reservado</span>
+            </div>
+            <div class="data-chip data-chip--ok">
+              <span class="chip-dia">09</span>
+              <span class="chip-label">Sáb</span>
+              <span class="chip-status">Disponível</span>
+            </div>
+            <div class="data-chip data-chip--ok">
+              <span class="chip-dia">16</span>
+              <span class="chip-label">Sáb</span>
+              <span class="chip-status">Disponível</span>
+            </div>
+            <div class="data-chip data-chip--off">
+              <span class="chip-dia">23</span>
+              <span class="chip-label">Sáb</span>
+              <span class="chip-status">Reservado</span>
+            </div>
+            <div class="data-chip data-chip--ok">
+              <span class="chip-dia">30</span>
+              <span class="chip-label">Sáb</span>
+              <span class="chip-status">Disponível</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="datas-mes">
+          <span class="datas-mes-label">Junho 2026</span>
+          <div class="chips-row">
+            <div class="data-chip data-chip--ok">
+              <span class="chip-dia">06</span>
+              <span class="chip-label">Sáb</span>
+              <span class="chip-status">Disponível</span>
+            </div>
+            <div class="data-chip data-chip--off">
+              <span class="chip-dia">13</span>
+              <span class="chip-label">Sáb</span>
+              <span class="chip-status">Reservado</span>
+            </div>
+            <div class="data-chip data-chip--ok">
+              <span class="chip-dia">20</span>
+              <span class="chip-label">Sáb</span>
+              <span class="chip-status">Disponível</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="datas-nota">* Disponibilidade sujeita a alteração. Confirme com nossa equipe.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       ORÇAMENTO — Formulário multi-step
        ══════════════════════════════════════════════ -->
   <section id="orcamento" aria-labelledby="orcamento-titulo">
     <div class="container">
 
       <div class="orcamento-header js-fade">
-        <p class="label" style="justify-content:center;">Solicite seu</p>
-        <h2 id="orcamento-titulo">Orçamento</h2>
+        <p class="label" style="justify-content:center;">Vamos planejar juntos</p>
+        <h2 id="orcamento-titulo">Solicite seu <em>Orçamento</em></h2>
         <div class="ornamento" aria-hidden="true"><span class="ornamento-icone"></span></div>
-        <p class="orcamento-subtitulo">Responderemos em até 24 horas por WhatsApp ou e-mail.</p>
+        <p class="orcamento-subtitulo">Respondemos em até 24 horas por WhatsApp ou e-mail.</p>
       </div>
 
       <div class="orcamento-grid">
 
-        <!-- Formulário -->
+        <!-- Formulário multi-step -->
         <div class="orcamento-form-wrapper">
-          <!-- Estado de sucesso -->
+
+          <!-- Sucesso -->
           <div id="formSucesso" class="form-sucesso" hidden>
             <div class="form-sucesso-inner">
               <svg width="56" height="56" viewBox="0 0 100 100" fill="none" aria-hidden="true">
@@ -375,129 +625,210 @@
             </div>
           </div>
 
-          <form method="POST"
-                class="orcamento-form"
-                id="orcamentoForm"
-                novalidate>
+          <!-- Indicador de progresso -->
+          <div class="step-indicator" id="stepIndicator" aria-label="Progresso do formulário">
+            <div class="step-bar">
+              <div class="step-bar-fill" id="stepBarFill"></div>
+            </div>
+            <div class="step-labels">
+              <span class="step-label active" data-step="1">Seu evento</span>
+              <span class="step-label"         data-step="2">Data &amp; espaços</span>
+              <span class="step-label"         data-step="3">Detalhes</span>
+              <span class="step-label"         data-step="4">Seus dados</span>
+            </div>
+          </div>
 
-            <fieldset>
-              <legend>Seus dados</legend>
-              <div class="form-group">
-                <label for="nome">Nome completo <span class="required" aria-hidden="true">*</span></label>
-                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required autocomplete="name">
+          <form id="orcamentoForm" class="orcamento-form" novalidate>
+
+            <!-- STEP 1 — Evento -->
+            <div class="form-step active" id="step1" data-step="1">
+              <div class="step-titulo">
+                <span class="step-num">01</span>
+                <h3>Qual é o seu evento?</h3>
               </div>
-              <div class="form-row">
+
+              <fieldset>
+                <legend>Tipo de evento</legend>
+                <div class="checkbox-grid">
+                  <label class="check-label"><input type="checkbox" name="tipo_evento" value="Casamento"> Casamento</label>
+                  <label class="check-label"><input type="checkbox" name="tipo_evento" value="Debutante / 15 anos"> Debutante / 15 anos</label>
+                  <label class="check-label"><input type="checkbox" name="tipo_evento" value="Aniversário"> Aniversário</label>
+                  <label class="check-label"><input type="checkbox" name="tipo_evento" value="Confraternização / Corporativo"> Corporativo</label>
+                  <label class="check-label"><input type="checkbox" name="tipo_evento" value="Outro"> Outro</label>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Número de convidados</legend>
+                <div class="radio-grid">
+                  <label class="radio-label"><input type="radio" name="convidados" value="Até 99 pessoas"> Até 99 pessoas</label>
+                  <label class="radio-label"><input type="radio" name="convidados" value="100 a 199 pessoas"> 100 a 199 pessoas</label>
+                  <label class="radio-label"><input type="radio" name="convidados" value="200 a 299 pessoas"> 200 a 299 pessoas</label>
+                  <label class="radio-label"><input type="radio" name="convidados" value="300 a 399 pessoas"> 300 a 399 pessoas</label>
+                  <label class="radio-label"><input type="radio" name="convidados" value="400+ pessoas"> 400+ pessoas</label>
+                </div>
+              </fieldset>
+
+              <div class="step-nav">
+                <span></span>
+                <button type="button" class="btn-step-next" data-next="2">
+                  Próximo — Data &amp; Espaços
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 2 — Data & Espaços -->
+            <div class="form-step" id="step2" data-step="2">
+              <div class="step-titulo">
+                <span class="step-num">02</span>
+                <h3>Quando e onde?</h3>
+              </div>
+
+              <fieldset>
+                <legend>Data pretendida</legend>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="data">Data do evento</label>
+                    <input type="date" id="data" name="data">
+                  </div>
+                  <div class="form-group form-group-flex">
+                    <label class="check-label check-label-standalone">
+                      <input type="checkbox" name="flexibilidade" value="Sim">
+                      Tenho flexibilidade de data
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Espaços de interesse</legend>
+                <div class="checkbox-grid">
+                  <label class="check-label"><input type="checkbox" name="espacos" value="Salão de eventos"> Salão de eventos</label>
+                  <label class="check-label"><input type="checkbox" name="espacos" value="Área externa / jardins"> Área externa / jardins</label>
+                  <label class="check-label"><input type="checkbox" name="espacos" value="Lago e entorno"> Lago e entorno</label>
+                  <label class="check-label"><input type="checkbox" name="espacos" value="Piscina e lazer"> Piscina e lazer</label>
+                  <label class="check-label"><input type="checkbox" name="espacos" value="Espaço completo"> Espaço completo</label>
+                </div>
+              </fieldset>
+
+              <div class="step-nav">
+                <button type="button" class="btn-step-back" data-back="1">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                  Voltar
+                </button>
+                <button type="button" class="btn-step-next" data-next="3">
+                  Próximo — Detalhes
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 3 — Detalhes -->
+            <div class="form-step" id="step3" data-step="3">
+              <div class="step-titulo">
+                <span class="step-num">03</span>
+                <h3>Mais detalhes do evento</h3>
+              </div>
+
+              <fieldset>
+                <legend>Serviços adicionais</legend>
+                <div class="checkbox-grid">
+                  <label class="check-label"><input type="checkbox" name="servicos" value="Buffet / Alimentação"> Buffet / Alimentação</label>
+                  <label class="check-label"><input type="checkbox" name="servicos" value="Decoração"> Decoração</label>
+                  <label class="check-label"><input type="checkbox" name="servicos" value="Som e iluminação"> Som e iluminação</label>
+                  <label class="check-label"><input type="checkbox" name="servicos" value="Cerimonialista"> Cerimonialista</label>
+                  <label class="check-label"><input type="checkbox" name="servicos" value="Fotografia e vídeo"> Fotografia e vídeo</label>
+                  <label class="check-label"><input type="checkbox" name="servicos" value="Não sei ainda"> Não sei ainda</label>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Faixa de investimento</legend>
+                <div class="radio-grid">
+                  <label class="radio-label"><input type="radio" name="investimento" value="Até R$ 5.000"> Até R$ 5.000</label>
+                  <label class="radio-label"><input type="radio" name="investimento" value="R$ 5.000 – R$ 10.000"> R$ 5.000 – R$ 10.000</label>
+                  <label class="radio-label"><input type="radio" name="investimento" value="R$ 10.000 – R$ 20.000"> R$ 10.000 – R$ 20.000</label>
+                  <label class="radio-label"><input type="radio" name="investimento" value="Acima de R$ 20.000"> Acima de R$ 20.000</label>
+                  <label class="radio-label"><input type="radio" name="investimento" value="Ainda estou pesquisando"> Ainda pesquisando</label>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Como nos conheceu?</legend>
                 <div class="form-group">
-                  <label for="email">E-mail <span class="required" aria-hidden="true">*</span></label>
-                  <input type="email" id="email" name="email" placeholder="seu@email.com" required autocomplete="email">
+                  <label for="origem">Canal de origem</label>
+                  <select id="origem" name="origem">
+                    <option value="">Selecione...</option>
+                    <option value="Google">Google</option>
+                    <option value="Instagram">Instagram</option>
+                    <option value="Indicação de amigos">Indicação de amigos</option>
+                    <option value="Facebook">Facebook</option>
+                    <option value="Outro">Outro</option>
+                  </select>
                 </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Mensagem livre</legend>
                 <div class="form-group">
-                  <label for="telefone">WhatsApp / Telefone <span class="required" aria-hidden="true">*</span></label>
-                  <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required autocomplete="tel">
+                  <label for="mensagem">Conte mais sobre o seu evento</label>
+                  <textarea id="mensagem" name="mensagem" rows="4"
+                    placeholder="Dúvidas, observações ou detalhes sobre o evento que você imagina..."></textarea>
                 </div>
-              </div>
-            </fieldset>
+              </fieldset>
 
-            <fieldset>
-              <legend>Tipo de evento</legend>
-              <div class="checkbox-grid">
-                <label class="check-label"><input type="checkbox" name="tipo_evento" value="Casamento"> Casamento</label>
-                <label class="check-label"><input type="checkbox" name="tipo_evento" value="Debutante / 15 anos"> Debutante / 15 anos</label>
-                <label class="check-label"><input type="checkbox" name="tipo_evento" value="Aniversário"> Aniversário</label>
-                <label class="check-label"><input type="checkbox" name="tipo_evento" value="Confraternização / Corporativo"> Corporativo</label>
-                <label class="check-label"><input type="checkbox" name="tipo_evento" value="Outro"> Outro</label>
+              <div class="step-nav">
+                <button type="button" class="btn-step-back" data-back="2">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                  Voltar
+                </button>
+                <button type="button" class="btn-step-next" data-next="4">
+                  Próximo — Seus dados
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
               </div>
-            </fieldset>
+            </div>
 
-            <fieldset>
-              <legend>Número de convidados</legend>
-              <div class="radio-grid">
-                <label class="radio-label"><input type="radio" name="convidados" value="Até 99 pessoas"> Até 99 pessoas</label>
-                <label class="radio-label"><input type="radio" name="convidados" value="100 a 199 pessoas"> 100 a 199 pessoas</label>
-                <label class="radio-label"><input type="radio" name="convidados" value="200 a 299 pessoas"> 200 a 299 pessoas</label>
-                <label class="radio-label"><input type="radio" name="convidados" value="300 a 399 pessoas"> 300 a 399 pessoas</label>
-                <label class="radio-label"><input type="radio" name="convidados" value="400+ pessoas"> 400+ pessoas</label>
+            <!-- STEP 4 — Dados pessoais -->
+            <div class="form-step" id="step4" data-step="4">
+              <div class="step-titulo">
+                <span class="step-num">04</span>
+                <h3>Quase lá — como entraremos em contato?</h3>
               </div>
-            </fieldset>
 
-            <fieldset>
-              <legend>Data pretendida</legend>
-              <div class="form-row">
+              <fieldset>
+                <legend>Seus dados</legend>
                 <div class="form-group">
-                  <label for="data">Data do evento</label>
-                  <input type="date" id="data" name="data">
+                  <label for="nome">Nome completo <span class="required" aria-hidden="true">*</span></label>
+                  <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required autocomplete="name">
                 </div>
-                <div class="form-group form-group-flex">
-                  <label class="check-label check-label-standalone">
-                    <input type="checkbox" name="flexibilidade" value="Sim">
-                    Tenho flexibilidade de data
-                  </label>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="email">E-mail <span class="required" aria-hidden="true">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="seu@email.com" required autocomplete="email">
+                  </div>
+                  <div class="form-group">
+                    <label for="telefone">WhatsApp <span class="required" aria-hidden="true">*</span></label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required autocomplete="tel">
+                  </div>
                 </div>
-              </div>
-            </fieldset>
+              </fieldset>
 
-            <fieldset>
-              <legend>Espaços de interesse</legend>
-              <div class="checkbox-grid">
-                <label class="check-label"><input type="checkbox" name="espacos" value="Salão de eventos"> Salão de eventos</label>
-                <label class="check-label"><input type="checkbox" name="espacos" value="Área externa / jardins"> Área externa / jardins</label>
-                <label class="check-label"><input type="checkbox" name="espacos" value="Lago e entorno"> Lago e entorno</label>
-                <label class="check-label"><input type="checkbox" name="espacos" value="Piscina e lazer"> Piscina e lazer</label>
-                <label class="check-label"><input type="checkbox" name="espacos" value="Espaço completo"> Espaço completo</label>
-              </div>
-            </fieldset>
+              <button type="submit" class="btn-submit">
+                Enviar Solicitação de Orçamento
+              </button>
+              <p class="form-note">* Campos obrigatórios. Respondemos em até 24 horas.</p>
 
-            <fieldset>
-              <legend>Serviços adicionais</legend>
-              <div class="checkbox-grid">
-                <label class="check-label"><input type="checkbox" name="servicos" value="Buffet / Alimentação"> Buffet / Alimentação</label>
-                <label class="check-label"><input type="checkbox" name="servicos" value="Decoração"> Decoração</label>
-                <label class="check-label"><input type="checkbox" name="servicos" value="Som e iluminação"> Som e iluminação</label>
-                <label class="check-label"><input type="checkbox" name="servicos" value="Cerimonialista"> Cerimonialista</label>
-                <label class="check-label"><input type="checkbox" name="servicos" value="Fotografia e vídeo"> Fotografia e vídeo</label>
-                <label class="check-label"><input type="checkbox" name="servicos" value="Não sei ainda"> Não sei ainda</label>
+              <div class="step-nav" style="margin-top:var(--sp-4);">
+                <button type="button" class="btn-step-back" data-back="3">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                  Voltar
+                </button>
+                <span></span>
               </div>
-            </fieldset>
+            </div>
 
-            <fieldset>
-              <legend>Faixa de investimento</legend>
-              <div class="radio-grid">
-                <label class="radio-label"><input type="radio" name="investimento" value="Até R$ 5.000"> Até R$ 5.000</label>
-                <label class="radio-label"><input type="radio" name="investimento" value="R$ 5.000 – R$ 10.000"> R$ 5.000 – R$ 10.000</label>
-                <label class="radio-label"><input type="radio" name="investimento" value="R$ 10.000 – R$ 20.000"> R$ 10.000 – R$ 20.000</label>
-                <label class="radio-label"><input type="radio" name="investimento" value="Acima de R$ 20.000"> Acima de R$ 20.000</label>
-                <label class="radio-label"><input type="radio" name="investimento" value="Ainda estou pesquisando"> Ainda pesquisando</label>
-              </div>
-            </fieldset>
-
-            <fieldset>
-              <legend>Como nos conheceu?</legend>
-              <div class="form-group">
-                <label for="origem">Canal de origem</label>
-                <select id="origem" name="origem">
-                  <option value="">Selecione...</option>
-                  <option value="Google">Google</option>
-                  <option value="Instagram">Instagram</option>
-                  <option value="Indicação de amigos">Indicação de amigos</option>
-                  <option value="Facebook">Facebook</option>
-                  <option value="Outro">Outro</option>
-                </select>
-              </div>
-            </fieldset>
-
-            <fieldset>
-              <legend>Sua mensagem</legend>
-              <div class="form-group">
-                <label for="mensagem">Conte mais sobre o seu evento</label>
-                <textarea id="mensagem" name="mensagem" rows="5"
-                  placeholder="Dúvidas, observações ou detalhes sobre o evento que você imagina..."></textarea>
-              </div>
-            </fieldset>
-
-            <button type="submit" class="btn-submit">
-              Enviar Solicitação de Orçamento
-            </button>
-            <p class="form-note">* Campos obrigatórios. Respondemos em até 24 horas.</p>
           </form>
         </div>
 
@@ -505,7 +836,6 @@
         <aside class="orcamento-contato" aria-label="Informações de contato">
           <div class="contato-card">
             <h3>Informações de contato</h3>
-
             <ul class="contato-lista">
               <li>
                 <span class="contato-icon" aria-hidden="true">
@@ -531,8 +861,7 @@
                 </span>
                 <div>
                   <strong>WhatsApp</strong>
-                  <a href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es"
-                     target="_blank" rel="noopener" class="whatsapp-link">Enviar mensagem</a>
+                  <a href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" rel="noopener" class="whatsapp-link">Enviar mensagem</a>
                 </div>
               </li>
               <li>
@@ -560,7 +889,7 @@
                 src="https://maps.google.com/maps?q=Estr.+de+Balsa+Nova,+3150,+Jardim+Itaqui,+Campo+Largo,+PR,+83604-140&output=embed&hl=pt-BR"
                 width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
-                title="Localização da Chácara O Alvo no Google Maps">
+                title="Localização da Chácara O Alvo">
               </iframe>
             </div>
           </div>
@@ -577,7 +906,6 @@
     <div class="container">
       <div class="footer-grid">
 
-        <!-- Col 1: Marca -->
         <div class="footer-col">
           <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
             <svg width="28" height="28" viewBox="0 0 100 100" fill="none" aria-hidden="true">
@@ -590,30 +918,29 @@
           <span class="footer-logo-sub">Campo Largo · Paraná</span>
           <p class="footer-tagline">Onde a natureza é parte da celebração</p>
           <div class="footer-social">
-            <a href="https://instagram.com/chacaraoalvo" target="_blank" rel="noopener" aria-label="Instagram da Chácara O Alvo">
+            <a href="https://instagram.com/chacaraoalvo" target="_blank" rel="noopener" aria-label="Instagram">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             </a>
-            <a href="https://facebook.com/chacaraoalvo" target="_blank" rel="noopener" aria-label="Facebook da Chácara O Alvo">
+            <a href="https://facebook.com/chacaraoalvo" target="_blank" rel="noopener" aria-label="Facebook">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             </a>
-            <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" rel="noopener" aria-label="WhatsApp da Chácara O Alvo">
+            <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" rel="noopener" aria-label="WhatsApp">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
             </a>
           </div>
         </div>
 
-        <!-- Col 2: Menu -->
         <div class="footer-col">
           <h4>Navegação</h4>
           <ul class="footer-links">
             <li><a href="#sobre">Sobre Nós</a></li>
             <li><a href="#espacos">Espaços</a></li>
             <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
             <li><a href="#orcamento">Solicitar Orçamento</a></li>
           </ul>
         </div>
 
-        <!-- Col 3: Contato -->
         <div class="footer-col">
           <h4>Contato</h4>
           <ul class="footer-contato">
@@ -632,9 +959,7 @@
     </div>
   </footer>
 
-  <!-- ══════════════════════════════════════════════
-       WHATSAPP FLUTUANTE
-       ══════════════════════════════════════════════ -->
+  <!-- WhatsApp flutuante -->
   <a href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es"
      class="whatsapp-float"
      target="_blank"
