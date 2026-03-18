@@ -2,6 +2,13 @@
    CHÁCARA O ALVO — main.js v2.0
    ══════════════════════════════════════════════════════════════ */
 
+/* ── Força início no topo da página ──────────────────────── */
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
+
 /* ── Supabase ─────────────────────────────────────────────── */
 var SUPABASE_URL = 'https://jgascbtbwyvflpicixyd.supabase.co';
 var SUPABASE_KEY = 'sb_publishable_czELIEaD2b6ZLNZowXmW-g_CDZENy6d';
@@ -212,7 +219,7 @@ var supabaseClient = (typeof supabase !== 'undefined')
   var currentStep = 1;
   var totalSteps  = 4;
 
-  function showStep(n) {
+  function showStep(n, doScroll) {
     /* Esconde todos */
     form.querySelectorAll('.form-step').forEach(function (step) {
       step.classList.remove('active');
@@ -238,12 +245,14 @@ var supabaseClient = (typeof supabase !== 'undefined')
 
     currentStep = n;
 
-    /* Scroll suave para o form */
-    var wrapper = document.querySelector('.orcamento-form-wrapper');
-    if (wrapper) {
-      var offset = (document.getElementById('header') || {}).offsetHeight || 76;
-      var top = wrapper.getBoundingClientRect().top + window.pageYOffset - offset - 20;
-      window.scrollTo({ top: top, behavior: 'smooth' });
+    /* Scroll suave para o form apenas ao navegar entre steps */
+    if (doScroll) {
+      var wrapper = document.querySelector('.orcamento-form-wrapper');
+      if (wrapper) {
+        var offset = (document.getElementById('header') || {}).offsetHeight || 76;
+        var top = wrapper.getBoundingClientRect().top + window.pageYOffset - offset - 20;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
     }
   }
 
@@ -251,7 +260,7 @@ var supabaseClient = (typeof supabase !== 'undefined')
   form.querySelectorAll('.btn-step-next').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var next = parseInt(this.getAttribute('data-next'), 10);
-      showStep(next);
+      showStep(next, true);
     });
   });
 
@@ -259,12 +268,12 @@ var supabaseClient = (typeof supabase !== 'undefined')
   form.querySelectorAll('.btn-step-back').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var back = parseInt(this.getAttribute('data-back'), 10);
-      showStep(back);
+      showStep(back, true);
     });
   });
 
-  /* Inicializa */
-  showStep(1);
+  /* Inicializa sem scroll */
+  showStep(1, false);
 })();
 
 
