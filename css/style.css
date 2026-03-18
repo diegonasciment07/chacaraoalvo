@@ -815,15 +815,34 @@ textarea { resize: vertical; min-height: 130px; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('../assets/images/20260316-DSC07220.jpg');
+  overflow: hidden;
+}
+
+/* Camada da imagem com Ken Burns — anima de forma independente do conteúdo */
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: -5%;          /* margem extra para o zoom não cortar bordas */
+  background-image: url('../assets/images/20260316-DSC07221.jpg');
   background-size: cover;
-  background-position: center 30%;
-  background-attachment: fixed;
+  background-position: center 35%;
+  transform-origin: center center;
+  animation: kenBurns 28s ease-in-out infinite alternate;
+  will-change: transform;
+  z-index: 0;
+}
+
+@keyframes kenBurns {
+  0%   { transform: scale(1)    translate(0%,   0%); }
+  35%  { transform: scale(1.06) translate(-1%,  0.5%); }
+  65%  { transform: scale(1.09) translate(-2%,  1%); }
+  100% { transform: scale(1.04) translate(0.5%, -0.5%); }
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background:
     linear-gradient(180deg,
       rgba(10,16,10,0.62) 0%,
@@ -1370,7 +1389,6 @@ textarea { resize: vertical; min-height: 130px; }
   .hamburger            { display: flex; }
 
   /* Hero */
-  #hero { background-attachment: scroll; }
   .hero-ctas { flex-direction: column; align-items: center; }
   .btn { width: 100%; max-width: 300px; justify-content: center; }
 
