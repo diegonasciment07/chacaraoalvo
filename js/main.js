@@ -449,8 +449,13 @@ var supabaseClient = (typeof supabase !== 'undefined')
         if (loadingEl) loadingEl.hidden = true;
         if (grid) grid.style.opacity = '1';
         if (result.error) {
-          console.error('Agenda fetch error:', result.error);
-          if (errorEl) errorEl.hidden = false;
+          /* 404 = tabela ainda não criada → silencioso, mostra tudo disponível */
+          var status = result.error.code || '';
+          var is404  = status === '42P01' || (result.error.message && result.error.message.indexOf('does not exist') !== -1);
+          if (!is404) {
+            console.error('Agenda fetch error:', result.error);
+            if (errorEl) errorEl.hidden = false;
+          }
           dataFetched = true;
           return;
         }
@@ -460,8 +465,11 @@ var supabaseClient = (typeof supabase !== 'undefined')
       .catch(function (err) {
         if (loadingEl) loadingEl.hidden = true;
         if (grid) grid.style.opacity = '1';
-        console.error('Agenda exception:', err);
-        if (errorEl) errorEl.hidden = false;
+        /* Silencia erros de tabela inexistente */
+        var msg = (err && err.message) ? err.message : '';
+        if (msg.indexOf('does not exist') === -1 && msg.indexOf('404') === -1) {
+          console.warn('Agenda exception:', err);
+        }
         dataFetched = true;
       });
   }
